@@ -1,1 +1,1 @@
-# jpetstore-db 6-Jan-20
+# jpetstore-db 6-Jan
