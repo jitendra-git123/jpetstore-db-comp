@@ -1,12 +1,12 @@
 node {
-        def majorVersion="4.0.${BUILD_NUMBER}"
+        def majorVersion="2.0.${BUILD_NUMBER}"
 	currentBuild.displayName = majorVersion
 
 	//currentBuild.displayName = "4.0.${BUILD_NUMBER}"
 	def GIT_COMMIT
   stage ('cloning the repository'){
 	  
-      def scm = git 'https://github.com/jitendra-git123/Jpetstore-db'
+      def scm = git 'https://github.com/jitendra-git123/Jpetstore-db-comp'
 	  GIT_COMMIT = sh(returnStdout: true, script: "git rev-parse HEAD").trim()
 	  echo "COMMITID ${GIT_COMMIT}"
 	  //echo "BBBB ${scm}"
@@ -34,7 +34,7 @@ echo "(*******)"
 	            ],
 	            delivery: [
 	                $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-	                pushVersion: '4.0.${BUILD_NUMBER}',
+	                pushVersion: '2.0.${BUILD_NUMBER}',
 	                //baseDir: '/var/jenkins_home/workspace/JPetStore/target',
 			 baseDir: 'D:/Installables/Jenkins/workspace/UOB/JPetStore-db/src/database/',
 	                fileIncludePatterns: '**/*.sql',
